@@ -1,0 +1,87 @@
+/* ==========================================================================
+   tokens.css — Variables de diseño (única fuente de colores, tipografía y espaciado)
+   Cambia aquí la identidad visual; el resto de archivos solo usa var(--…).
+   ========================================================================== */
+
+:root {
+  /* --- Tipografía --- */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* Escala fluida: crece con el ancho de pantalla entre un mínimo y un máximo */
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --fs-xl: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);
+  --fs-2xl: clamp(2.5rem, 1.8rem + 3.2vw, 4.5rem);
+
+  --lh-tight: 1.15;
+  --lh-base: 1.6;
+
+  /* --- Espaciado (escala de 4px) --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: clamp(4rem, 3rem + 4vw, 6rem);
+
+  /* --- Forma --- */
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-pill: 999px;
+
+  /* --- Layout --- */
+  --container: 72rem;
+  --gutter: clamp(1rem, 0.5rem + 2vw, 2rem);
+  --header-h: 4rem;
+
+  /* --- Movimiento --- */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 200ms;
+}
+
+/* --- Tema claro (por defecto) --- */
+:root,
+:root[data-theme="light"] {
+  --c-bg: #f7f7f5;
+  --c-surface: #ffffff;
+  --c-text: #1b1d21;
+  --c-text-muted: #5b6069;
+  --c-border: #e2e3e0;
+  --c-accent: #0f766e;        /* verde azulado — contraste AA sobre blanco */
+  --c-accent-contrast: #ffffff;
+  --c-accent-soft: #e3f2ef;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 16px rgb(0 0 0 / 0.05);
+}
+
+/* --- Tema oscuro: por preferencia del sistema si el usuario no ha elegido --- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --c-bg: #111315;
+    --c-surface: #1a1d20;
+    --c-text: #eceff1;
+    --c-text-muted: #a3a9b1;
+    --c-border: #2b3035;
+    --c-accent: #5eead4;
+    --c-accent-contrast: #0b2622;
+    --c-accent-soft: #15302c;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 16px rgb(0 0 0 / 0.25);
+  }
+}
+
+/* --- Tema oscuro: elegido manualmente con el botón --- */
+:root[data-theme="dark"] {
+  --c-bg: #111315;
+  --c-surface: #1a1d20;
+  --c-text: #eceff1;
+  --c-text-muted: #a3a9b1;
+  --c-border: #2b3035;
+  --c-accent: #5eead4;
+  --c-accent-contrast: #0b2622;
+  --c-accent-soft: #15302c;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 16px rgb(0 0 0 / 0.25);
+}
