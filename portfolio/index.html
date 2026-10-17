@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- TODO: nombre, rol y descripción reales -->
+  <title>Zaid Mouedden · Desarrollador web junior</title>
+  <meta name="description" content="Portfolio y currículum de Nombre Apellido, desarrollador web junior: competencias, proyectos reales y contacto.">
+  <meta name="author" content="Nombre Apellido">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nombre Apellido · Desarrollador web junior">
+  <meta property="og:description" content="Competencias, proyectos reales y contacto.">
+  <meta property="og:url" content="https://usuario.github.io/portfolio/">
+
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Se ejecuta antes de pintar: activa las mejoras JS y aplica el tema sin parpadeo -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      var theme = null;
+      try { theme = localStorage.getItem("theme"); } catch (e) { /* almacenamiento bloqueado */ }
+      if (theme !== "light" && theme !== "dark") {
+        theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      root.dataset.theme = theme;
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- ===================== CABECERA ===================== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-logo" href="#inicio">
+        <span class="visually-hidden">Nombre Apellido, inicio</span>
+        <span aria-hidden="true">NA<span class="site-logo__dot">.</span></span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Principal">
+        <ul class="site-nav__list">
+          <li><a href="#perfil">Perfil</a></li>
+          <li><a href="#competencias">Competencias</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#formacion">Formación</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button class="icon-btn theme-toggle" type="button" aria-label="Tema oscuro" aria-pressed="false">
+        <svg class="icon icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+        <svg class="icon icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+      </button>
+
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+        <span class="visually-hidden">Menú</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== PRESENTACIÓN ===================== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="hero__eyebrow">Hola, soy</p>
+          <h1 class="hero__title" id="hero-title">Zaid Mouedden</h1>
+          <p class="hero__role">Desarrollador web junior · Front-end</p>
+          <p class="hero__lead">
+            Una frase que diga qué construyes y con qué. Ej.: construyo interfaces web
+            accesibles y rápidas con HTML, CSS y JavaScript.
+          </p>
+          <p class="hero__meta">
+            <span>Barcelona, España</span>
+            <span aria-hidden="true">·</span>
+            <span>Disponible para prácticas</span>
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#proyectos">Ver proyectos</a>
+            <a class="btn btn--ghost" href="mailto:tu.email@ejemplo.com">Escríbeme</a>
+          </div>
+
+          <ul class="social-list" aria-label="Perfiles externos">
+            <li><a href="https://github.com/usuario" rel="me noopener" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/usuario" rel="me noopener" target="_blank">LinkedIn</a></li>
+            <!-- Descomenta cuando subas tu CV a assets/cv.pdf -->
+            <!-- <li><a href="assets/cv.pdf" download>CV en PDF</a></li> -->
+          </ul>
+        </div>
+
+        <!-- Foto opcional: descomenta y añade assets/img/foto.webp (cuadrada, ~600px).
+             El diseño pasa a dos columnas automáticamente. -->
+        <!--
+        <figure class="hero__photo">
+          <img src="assets/img/foto.webp" alt="Retrato de Nombre Apellido" width="600" height="600">
+        </figure>
+        -->
+      </div>
+    </section>
+
+    <!-- ===================== PERFIL ===================== -->
+    <section class="section" id="perfil" aria-labelledby="perfil-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title" id="perfil-title">Perfil</h2>
+        </header>
+
+        <div class="profile">
+          <div class="profile__text">
+            <p>Me estoy formando en desarrollo web. Trabajo con HTML, CSS/SCSS y JavaScript, y he hecho ejercicios y proyectos con Vite, PHP y bases de datos SQL. Uso Git y GitHub para el control de versiones.</p>
+            <p>Quiero crecer como desarrollador web. Me interesa entender cómo funcionan las cosas por dentro, no quedarme en usar herramientas sin saber qué hacen.</p>
+            <p>Busco unas prácticas donde aprender en un equipo real. Aporto curiosidad por entender los fundamentos y honestidad sobre lo que sé y lo que todavía estoy aprendiendo.</p>
+          </div>
+
+          <dl class="facts card">
+            <div class="facts__row">
+              <dt>Busco</dt>
+              <dd>Prácticas / primer empleo</dd>
+            </div>
+            <div class="facts__row">
+              <dt>Modalidad</dt>
+              <dd>Presencial o híbrida</dd>
+            </div>
+            <div class="facts__row">
+              <dt>Disponibilidad</dt>
+              <dd><time datetime="2027-03">Marzo 2027</time></dd>
+            </div>
+            <div class="facts__row">
+              <dt>Ubicación</dt>
+              <dd>Barcelona, España</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COMPETENCIAS ===================== -->
+    <!-- Regla del enunciado: deja solo lo que puedas explicar o demostrar con un proyecto. -->
+    <section class="section" id="competencias" aria-labelledby="competencias-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title" id="competencias-title">Competencias técnicas</h2>
+          <p class="section__intro">Agrupadas por área. Cada una está respaldada por al menos un proyecto de la sección siguiente.</p>
+        </header>
+
+        <div class="grid skills">
+          <article class="card skill-group">
+            <h3 class="skill-group__title">Front-end</h3>
+            <ul class="tag-list">
+              <li class="tag">HTML semántico</li>
+              <li class="tag">CSS (Flexbox, Grid)</li>
+              <li class="tag">Diseño responsive</li>
+              <li class="tag">JavaScript (DOM, eventos)</li>
+              <li class="tag">Accesibilidad básica</li>
+            </ul>
+          </article>
+
+          <article class="card skill-group">
+            <h3 class="skill-group__title">Back-end y datos</h3>
+            <ul class="tag-list">
+              <li class="tag">Java</li>
+              <li class="tag">SQL</li>
+              <li class="tag">Modelado de datos</li>
+            </ul>
+          </article>
+
+          <article class="card skill-group">
+            <h3 class="skill-group__title">Herramientas</h3>
+            <ul class="tag-list">
+              <li class="tag">Git y GitHub</li>
+              <li class="tag">VS Code</li>
+              <li class="tag">Linux (terminal)</li>
+              <li class="tag">DevTools del navegador</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROYECTOS ===================== -->
+    <section class="section" id="proyectos" aria-labelledby="proyectos-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title" id="proyectos-title">Proyectos</h2>
+          <p class="section__intro">Trabajo real con código disponible. Cada proyecto indica qué competencia demuestra.</p>
+        </header>
+
+        <!-- Los botones de filtro se generan en JS a partir de los data-tags de cada proyecto -->
+        <div class="filters" role="group" aria-label="Filtrar proyectos por tecnología" data-filters hidden></div>
+        <p class="visually-hidden" aria-live="polite" data-filter-status></p>
+
+        <div class="grid projects">
+          <!--
+            PLANTILLA DE PROYECTO — copia este <article> para añadir uno nuevo.
+            data-tags: palabras en minúscula separadas por espacios; alimentan el filtro.
+          -->
+          <article class="card project" data-tags="html css javascript">
+            <figure class="project__media">
+              <img src="assets/img/project-placeholder.svg" alt="Captura de la página principal del portfolio" width="1600" height="900" loading="lazy">
+            </figure>
+            <div class="project__body">
+              <h3 class="project__title">Este portfolio</h3>
+              <p>Web personal que funciona como currículum y portfolio. Sin frameworks, mobile-first y con tema claro/oscuro.</p>
+              <p class="project__proof"><strong>Demuestra:</strong> HTML semántico, CSS mantenible con variables, JavaScript como mejora progresiva, despliegue en GitHub Pages.</p>
+              <ul class="tag-list" aria-label="Tecnologías">
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+                <li class="tag">JavaScript</li>
+              </ul>
+              <p class="project__links">
+                <a href="https://github.com/usuario/portfolio">Código</a>
+                <a href="https://usuario.github.io/portfolio/">Demo</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="card project" data-tags="javascript api">
+            <figure class="project__media">
+              <img src="assets/img/project-placeholder.svg" alt="Captura del proyecto 2" width="1600" height="900" loading="lazy">
+            </figure>
+            <div class="project__body">
+              <h3 class="project__title">Proyecto 2</h3>
+              <p>Qué problema resuelve y para quién, en una o dos frases.</p>
+              <p class="project__proof"><strong>Demuestra:</strong> la competencia concreta (p. ej. consumo de una API con fetch y gestión de errores).</p>
+              <ul class="tag-list" aria-label="Tecnologías">
+                <li class="tag">JavaScript</li>
+                <li class="tag">API REST</li>
+              </ul>
+              <p class="project__links">
+                <a href="https://github.com/usuario/proyecto-2">Código</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="card project" data-tags="java sql">
+            <figure class="project__media">
+              <img src="assets/img/project-placeholder.svg" alt="Captura del proyecto 3" width="1600" height="900" loading="lazy">
+            </figure>
+            <div class="project__body">
+              <h3 class="project__title">Proyecto 3</h3>
+              <p>Qué problema resuelve y para quién, en una o dos frases.</p>
+              <p class="project__proof"><strong>Demuestra:</strong> la competencia concreta (p. ej. acceso a base de datos desde Java).</p>
+              <ul class="tag-list" aria-label="Tecnologías">
+                <li class="tag">Java</li>
+                <li class="tag">SQL</li>
+              </ul>
+              <p class="project__links">
+                <a href="https://github.com/usuario/proyecto-3">Código</a>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FORMACIÓN Y EXPERIENCIA ===================== -->
+    <section class="section" id="formacion" aria-labelledby="formacion-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title" id="formacion-title">Formación y experiencia</h2>
+        </header>
+
+        <div class="grid resume">
+          <div class="resume__col">
+            <h3 class="resume__title">Formación</h3>
+            <ol class="timeline">
+              <li class="timeline__item">
+                <h4 class="timeline__title">Ciclo formativo de grado superior (DAW)</h4>
+                <p class="timeline__meta">
+                  Thos i Codina · <time datetime="2025">2025</time> – actualidad
+                </p>
+                <p class="timeline__desc">Módulos o contenidos más relevantes para el puesto.</p>
+              </li>
+              <li class="timeline__item">
+                <h4 class="timeline__title">SMX</h4>
+                <p class="timeline__meta">
+                  Freta · <time datetime="2023">2022</time> – <time datetime="2025">2024</time>
+                </p>
+              </li>
+            </ol>
+          </div>
+
+          <div class="resume__col">
+            <h3 class="resume__title">Experiencia</h3>
+            <ol class="timeline">
+              <li class="timeline__item">
+                <h4 class="timeline__title">Puesto · Empresa</h4>
+                <p class="timeline__meta">
+                  <time datetime="2024-06">Jun 2024</time> – <time datetime="2024-09">Sep 2024</time>
+                </p>
+                <p class="timeline__desc">Responsabilidades y resultados. Si no es del sector, destaca lo transferible (trato con clientes, organización, autonomía).</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="grid extras">
+          <article class="card">
+            <h3 class="resume__title">Idiomas</h3>
+            <ul class="lang-list">
+              <li><span>Español</span> <span class="lang-list__level">Nativo</span></li>
+              <li><span>Catalán</span> <span class="lang-list__level">Nivel</span></li>
+              <li><span>Inglés</span> <span class="lang-list__level">B2</span></li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 class="resume__title">Certificaciones</h3>
+            <ul class="lang-list">
+              <li><span>Nombre del certificado</span> <span class="lang-list__level"><time datetime="2026">2026</time></span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACTO ===================== -->
+    <section class="section" id="contacto" aria-labelledby="contacto-title">
+      <div class="container contact">
+        <header class="section__header">
+          <h2 class="section__title" id="contacto-title">Contacto</h2>
+          <p class="section__intro">¿Tienes una oferta de prácticas o un proyecto? Respondo en menos de 24&nbsp;horas.</p>
+        </header>
+
+        <address class="card contact__card">
+          <ul class="contact-list">
+            <li>
+              <span class="contact-list__label">Email</span>
+              <a class="contact-list__value" href="mailto:zamouedden@gmail.com">zamouedden@gmail.com</a>
+              <button class="btn btn--ghost btn--sm" type="button" data-copy="tu.email@ejemplo.com" hidden>Copiar</button>
+            </li>
+            <li>
+              <span class="contact-list__label">GitHub</span>
+              <a class="contact-list__value" href="https://github.com/ZaidDAW2" rel="noopener" target="_blank">github.com/ZaidDAW2</a>
+            </li>
+            <li>
+              <span class="contact-list__label">LinkedIn</span>
+              <a class="contact-list__value" href="https://www.linkedin.com/in/usuario" rel="noopener" target="_blank">linkedin.com/in/usuario</a>
+            </li>
+          </ul>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== PIE ===================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© <span data-year>2026</span> Zaid Mouedden</p>
+      <p>Hecho con HTML, CSS y JavaScript · <a href="https://github.com/usuario/portfolio">Código fuente</a></p>
+    </div>
+  </footer>
+</body>
+</html>
