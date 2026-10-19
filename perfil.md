@@ -56,3 +56,7 @@ Espero este año poder llevar todo al dia y no estresarme por el volumen de trab
 ### Herramientas que estoy aprendiendo
 
 - Git
+
+### Objetivo profesional
+
+No identificado aun
