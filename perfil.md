@@ -52,3 +52,7 @@ Espero este año poder llevar todo al dia y no estresarme por el volumen de trab
 - [ ] Sistemas Operativos
 - [ ] Proficiencia boxeo
 - [X] Segundo DAW
+
+### Herramientas que estoy aprendiendo
+
+- Git
