@@ -1,0 +1,9 @@
+# Sistema y editor
+.DS_Store
+.vscode/
+
+# Datos privados
+secrets.txt
+
+# Archivos generados
+*.log
